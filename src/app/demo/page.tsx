@@ -1,8 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 import styles from "./demo.module.css";
 
 export default function DemoPage() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
+
   return (
     <main className={styles.page}>
       <section className={styles.content}>
