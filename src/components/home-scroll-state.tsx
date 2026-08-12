@@ -16,17 +16,22 @@ export function HomeScrollState({
     }
 
     let ticking = false;
+    let currentSection: "start" | "projects" =
+      window.location.hash === "#projects"
+        ? "projects"
+        : "start";
 
     const updateSection = () => {
-      const headerHeight = Number(
-        getComputedStyle(
-          document.documentElement
-        )
-          .getPropertyValue(
-            "--header-height"
+      const headerHeight =
+        Number(
+          getComputedStyle(
+            document.documentElement
           )
-          .replace("px", "")
-      );
+            .getPropertyValue(
+              "--header-height"
+            )
+            .replace("px", "")
+        ) || 55;
 
       const scrollPoint =
         window.scrollY +
@@ -37,17 +42,30 @@ export function HomeScrollState({
         projects.getBoundingClientRect().top +
         window.scrollY;
 
-      const isProjects =
-        scrollPoint >= projectsTop;
+      const nextSection =
+        scrollPoint >= projectsTop
+          ? "projects"
+          : "start";
+
+      if (nextSection === currentSection) {
+        ticking = false;
+        return;
+      }
+
+      currentSection = nextSection;
 
       const prefix =
         language === "en"
           ? "/en"
           : "";
 
-      const nextUrl = isProjects
-        ? `${prefix}#projects`
-        : `${prefix}#start`;
+      const nextHash =
+        nextSection === "projects"
+          ? "#projects"
+          : "#start";
+
+      const nextUrl =
+        `${prefix}${nextHash}`;
 
       const currentUrl =
         window.location.pathname +
@@ -69,13 +87,15 @@ export function HomeScrollState({
     };
 
     const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(
-          updateSection
-        );
-
-        ticking = true;
+      if (ticking) {
+        return;
       }
+
+      ticking = true;
+
+      window.requestAnimationFrame(
+        updateSection
+      );
     };
 
     updateSection();
