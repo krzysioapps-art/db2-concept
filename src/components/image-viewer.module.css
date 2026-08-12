@@ -1,0 +1,144 @@
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  animation: viewerIn 0.2s ease;
+}
+
+.imageWrap {
+  position: relative;
+
+  width: min(
+    90vw,
+    1500px
+  );
+
+  height: min(
+    88vh,
+    1000px
+  );
+
+  touch-action: pan-y;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.control {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--fg);
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease;
+}
+
+.control:hover {
+  opacity: 0.5;
+}
+
+.close {
+  top: 20px;
+  right: var(--page);
+}
+
+.previous {
+  left: var(--page);
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.next {
+  right: var(--page);
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.counter {
+  position: absolute;
+
+  right: var(--page);
+  bottom: 24px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1;
+}
+
+@keyframes viewerIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .imageWrap {
+    width: 100vw;
+    height: 82vh;
+  }
+
+  .control {
+    width: 40px;
+    height: 40px;
+  }
+
+  .close {
+    top: 12px;
+    right: 10px;
+  }
+
+  .previous {
+    left: 8px;
+  }
+
+  .next {
+    right: 8px;
+  }
+
+  .counter {
+    right: 14px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer {
+    animation: none;
+  }
+
+  .control {
+    transition: none;
+  }
+}

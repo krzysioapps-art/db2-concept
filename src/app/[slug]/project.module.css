@@ -1,0 +1,221 @@
+.page {
+  max-width: var(--content);
+  margin: 0 auto;
+
+  padding:
+    clamp(40px, 5vw, 80px)
+    var(--page)
+    100px;
+}
+
+/* --------------------------------
+   Header
+-------------------------------- */
+
+.header {
+  margin-bottom: clamp(
+    30px,
+    4vw,
+    60px
+  );
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: clamp(
+    45px,
+    7vw,
+    90px
+  );
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.breadcrumbs a {
+  color: var(--fg);
+}
+
+.breadcrumbs a:hover {
+  opacity: 0.55;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 40px;
+}
+
+.title {
+  max-width: 900px;
+
+  margin: 0;
+
+  font-size: clamp(
+    42px,
+    7vw,
+    92px
+  );
+
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+
+.location {
+  flex-shrink: 0;
+
+  color: var(--muted);
+
+  text-align: right;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* --------------------------------
+   Hero
+-------------------------------- */
+
+.hero {
+  width: 100%;
+
+  margin-bottom: clamp(
+    70px,
+    10vw,
+    140px
+  );
+}
+
+.hero img {
+  display: block;
+
+  width: 100%;
+  height: min(72vh, 900px);
+
+  object-fit: cover;
+}
+
+/* --------------------------------
+   Info
+-------------------------------- */
+
+.info {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.7fr)
+    minmax(0, 1.3fr);
+
+  gap: clamp(
+    50px,
+    8vw,
+    150px
+  );
+
+  margin-bottom: clamp(
+    90px,
+    14vw,
+    200px
+  );
+
+  align-items: start;
+}
+
+/*
+ * ProjectMeta pozostaje przyklejone
+ * pod fixed headerem podczas scrollowania
+ * opisu.
+ */
+.info > :first-child {
+  position: sticky;
+
+  top: calc(
+    var(--header-height) + 30px
+  );
+
+  align-self: start;
+}
+
+/* --------------------------------
+   Description
+-------------------------------- */
+
+.description {
+  width: 100%;
+  max-width: 620px;
+
+  font-size: clamp(
+    18px,
+    1.65vw,
+    24px
+  );
+
+  line-height: 1.5;
+}
+
+.description p {
+  margin: 0 0 1.5em;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 800px) {
+  .page {
+    padding-top: 35px;
+    padding-bottom: 80px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 45px;
+  }
+
+  .titleRow {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .location {
+    text-align: left;
+  }
+
+  .hero img {
+    height: auto;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
+
+  .info > :first-child {
+    position: static;
+  }
+
+  .description {
+    max-width: none;
+
+    font-size: 18px;
+  }
+}

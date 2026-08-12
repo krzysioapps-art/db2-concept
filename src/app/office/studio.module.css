@@ -1,0 +1,280 @@
+.page {
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+/* --------------------------------
+   Main studio section
+-------------------------------- */
+
+.content {
+  padding:
+    clamp(70px, 9vw, 120px)
+    var(--page)
+    120px;
+}
+
+.heading {
+  margin-bottom: clamp(
+    70px,
+    11vw,
+    150px
+  );
+}
+
+.heading h1 {
+  margin: 0;
+
+  font-size: clamp(
+    42px,
+    6vw,
+    80px
+  );
+
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+
+/* --------------------------------
+   Intro
+-------------------------------- */
+
+.intro {
+  width: 100%;
+}
+
+.intro p {
+  max-width: 1050px;
+
+  margin: 0;
+
+  font-size: clamp(
+    24px,
+    3vw,
+    42px
+  );
+
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+/* --------------------------------
+   Team
+-------------------------------- */
+
+.team {
+  margin-top: clamp(
+    100px,
+    14vw,
+    190px
+  );
+}
+
+.sectionLabel {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.teamList {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: var(--gap);
+
+  margin-top: 45px;
+
+  font-size: clamp(
+    22px,
+    2.5vw,
+    36px
+  );
+
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+/* --------------------------------
+   Contact
+-------------------------------- */
+
+.contact {
+  margin-top: clamp(
+    70px,
+    8vw,
+    120px
+  );
+
+  padding:
+    30px
+    var(--page)
+    120px;
+
+  border-top: 0px solid var(--line);
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  align-items: start;
+
+  gap: clamp(
+    50px,
+    10vw,
+    150px
+  );
+}
+
+.contact h2 {
+  margin: 30px 0;
+
+  font-size: clamp(
+    36px,
+    5vw,
+    70px
+  );
+
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.contact address {
+  margin: 0;
+
+  font-style: normal;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  margin-top: 24px;
+
+  font-size: 14px;
+}
+
+.contactLinks a {
+  color: var(--fg);
+}
+
+/* --------------------------------
+   Form
+-------------------------------- */
+
+.form {
+  display: grid;
+
+  gap: 24px;
+
+  align-self: start;
+}
+
+.form label {
+  display: grid;
+
+  gap: 7px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 1px solid var(--line);
+
+  padding: 8px 0;
+
+  background: transparent;
+  color: var(--fg);
+
+  outline: none;
+
+  resize: vertical;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: var(--fg);
+}
+
+.form button {
+  justify-self: start;
+
+  border: 0;
+  border-bottom: 1px solid var(--fg);
+
+  padding: 8px 0;
+
+  background: transparent;
+  color: var(--fg);
+
+  cursor: pointer;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 800px) {
+  .content {
+    padding:
+      60px
+      var(--page)
+      80px;
+  }
+
+  .heading {
+    margin-bottom: 80px;
+  }
+
+  .intro p {
+    max-width: none;
+
+    font-size: clamp(
+      22px,
+      7vw,
+      34px
+    );
+  }
+
+  .team {
+    margin-top: 100px;
+  }
+
+  .teamList {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 35px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    margin-top: 70px;
+
+    padding:
+      30px
+      var(--page)
+      80px;
+  }
+}

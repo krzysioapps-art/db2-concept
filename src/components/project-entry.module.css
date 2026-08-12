@@ -1,0 +1,48 @@
+.entry {
+  min-width: 0;
+}
+
+.link {
+  display: block;
+}
+
+.image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.image img {
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  gap: 20px;
+
+  padding-top: 10px;
+
+  font-size: 12px;
+}
+
+.caption span:last-child {
+  color: var(--muted);
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .caption {
+    gap: 16px;
+  }
+}

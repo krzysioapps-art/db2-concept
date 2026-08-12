@@ -1,0 +1,69 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+
+  width: 100%;
+
+  gap: 8px;
+
+  overflow: hidden;
+}
+
+.item {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  height: 100%;
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.45s
+    cubic-bezier(0.2, 0.65, 0.2, 1)
+    var(--reveal-delay, 0ms);
+}
+
+.item.visible {
+  opacity: 1;
+}
+
+.item img {
+  object-fit: cover;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    gap: 6px;
+  }
+
+  .row {
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    opacity: 1;
+    transition: none;
+  }
+}
