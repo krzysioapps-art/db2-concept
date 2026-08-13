@@ -7,6 +7,8 @@ import { manrope } from "./fonts";
 
 import "./globals.css";
 
+import { ProjectNavigationLoader } from "@/components/project-navigation-loader";
+
 export const metadata: Metadata = {
   title: "db2 architekci",
   description:
@@ -22,6 +24,7 @@ export default function RootLayout({
     <html lang="pl">
       <body className={manrope.variable}>
         <SiteHeader />
+        <ProjectNavigationLoader />
         {children}
         <SiteFooter />
       </body>
