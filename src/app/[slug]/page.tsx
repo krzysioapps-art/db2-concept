@@ -6,14 +6,14 @@ import {
   projects,
 } from "@/data/projects";
 
-import { ProjectGallery } from "@/components/project-gallery";
-import { ProjectMeta } from "@/components/project-meta";
+import { ProjectGallery } from "@/components/project/project-gallery";
+import { ProjectMeta } from "@/components/project/project-meta";
 
 import { translations } from "@/data/translations";
 
 import styles from "./project.module.css";
 
-import { PolishText } from "@/components/polish-text";
+import { PolishText } from "@/components/ui/polish-text";
 
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({

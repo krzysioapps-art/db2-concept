@@ -3,11 +3,7 @@
 
   width: 100%;
 
-  margin-top: clamp(
-    100px,
-    14vw,
-    180px
-  );
+  margin-top: 40px;
 
   padding-bottom: 24px;
 }
@@ -61,7 +57,7 @@
 
 @media (max-width: 800px) {
   .footer {
-    margin-top: 100px;
+    margin-top: 40px;
 
     padding-bottom: 20px;
   }

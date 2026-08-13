@@ -1,0 +1,45 @@
+.meta {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+.item {
+  display: inline-flex;
+  align-items: baseline;
+
+  margin-right: 32px;
+  margin-bottom: 8px;
+
+  max-width: 100%;
+}
+
+.label {
+  flex: 0 0 auto;
+
+  margin-right: 8px;
+
+  color: var(--muted);
+}
+
+.value {
+  min-width: 0;
+
+  font-weight: 500;
+  color: var(--fg);
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 800px) {
+  .item {
+    margin-right: 20px;
+  }
+}

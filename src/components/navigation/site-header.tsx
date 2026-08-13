@@ -15,68 +15,55 @@ export function SiteHeader() {
 
   const [hash, setHash] = useState("");
 
-  const [studioSection, setStudioSection] =
+  const [officeSection, setOfficeSection] =
     useState<"start" | "contact">("start");
 
   const [menuOpen, setMenuOpen] =
     useState(false);
 
   useEffect(() => {
-    const updateHash = () => {
-      setHash(window.location.hash);
+    const updateState = () => {
+      const currentHash =
+        window.location.hash;
+
+      setHash(currentHash);
+
+      if (
+        pathname === "/office" ||
+        pathname === "/en/office"
+      ) {
+        setOfficeSection(
+          currentHash === "#contact"
+            ? "contact"
+            : "start"
+        );
+      }
     };
 
-    updateHash();
+    updateState();
 
     window.addEventListener(
       "hashchange",
-      updateHash
+      updateState
     );
 
     window.addEventListener(
       "sectionchange",
-      updateHash
+      updateState
     );
 
     return () => {
       window.removeEventListener(
         "hashchange",
-        updateHash
+        updateState
       );
 
       window.removeEventListener(
         "sectionchange",
-        updateHash
+        updateState
       );
     };
-  }, []);
-
-  useEffect(() => {
-    const handleStudioSection = (
-      event: Event
-    ) => {
-      const customEvent =
-        event as CustomEvent<
-          "start" | "contact"
-        >;
-
-      setStudioSection(
-        customEvent.detail
-      );
-    };
-
-    window.addEventListener(
-      "studiosectionchange",
-      handleStudioSection
-    );
-
-    return () => {
-      window.removeEventListener(
-        "studiosectionchange",
-        handleStudioSection
-      );
-    };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow =
@@ -102,15 +89,16 @@ export function SiteHeader() {
       : pathname === "/office";
 
   const isProjectsActive =
-    isHome && hash === "#projects";
+    isHome &&
+    hash === "#projects";
 
   const isStudioActive =
     isOffice &&
-    studioSection === "start";
+    officeSection === "start";
 
   const isContactActive =
     isOffice &&
-    studioSection === "contact";
+    officeSection === "contact";
 
   const homeHref =
     language === "en"
@@ -142,19 +130,35 @@ export function SiteHeader() {
     const currentHash =
       window.location.hash;
 
-    const currentPath =
-      pathname === "/en"
-        ? "/"
-        : pathname.startsWith("/en/")
-          ? pathname.slice(3)
-          : pathname;
+    let targetPath: string;
 
-    const targetPath =
-      targetLanguage === "en"
-        ? currentPath === "/"
-          ? "/en"
-          : `/en${currentPath}`
-        : currentPath;
+    if (targetLanguage === "en") {
+      if (pathname === "/") {
+        targetPath = "/en";
+      } else if (
+        pathname === "/office"
+      ) {
+        targetPath = "/en/office";
+      } else {
+        targetPath =
+          pathname.startsWith("/en/")
+            ? pathname
+            : `/en${pathname}`;
+      }
+    } else {
+      if (pathname === "/en") {
+        targetPath = "/";
+      } else if (
+        pathname === "/en/office"
+      ) {
+        targetPath = "/office";
+      } else {
+        targetPath =
+          pathname.startsWith("/en/")
+            ? pathname.slice(3)
+            : pathname;
+      }
+    }
 
     window.location.href =
       `${targetPath}${currentHash}`;

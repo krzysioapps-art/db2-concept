@@ -111,13 +111,13 @@
   display: grid;
 
   grid-template-columns:
-    minmax(180px, 0.7fr)
-    minmax(0, 1.3fr);
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
 
   gap: clamp(
     50px,
-    8vw,
-    150px
+    6vw,
+    110px
   );
 
   margin-bottom: clamp(

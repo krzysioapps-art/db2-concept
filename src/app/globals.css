@@ -19,6 +19,7 @@
 
 html {
   scroll-padding-top: var(--header-height);
+  scroll-behavior: auto;
 }
 
 body {

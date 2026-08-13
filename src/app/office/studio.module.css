@@ -9,10 +9,18 @@
 -------------------------------- */
 
 .content {
+  min-height: calc(
+    100svh - var(--header-height)
+  );
+
   padding:
     clamp(70px, 9vw, 120px)
     var(--page)
     120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .heading {
@@ -102,10 +110,8 @@
 -------------------------------- */
 
 .contact {
-  margin-top: clamp(
-    70px,
-    8vw,
-    120px
+  min-height: calc(
+    100svh - var(--header-height)
   );
 
   padding:
@@ -113,14 +119,12 @@
     var(--page)
     120px;
 
-  border-top: 0px solid var(--line);
-
   display: grid;
 
   grid-template-columns:
     1fr 1fr;
 
-  align-items: start;
+  align-items: center;
 
   gap: clamp(
     50px,
@@ -178,7 +182,7 @@
 
   gap: 24px;
 
-  align-self: start;
+  align-self: center;
 }
 
 .form label {
@@ -265,15 +269,19 @@
     margin-top: 35px;
   }
 
-  .contact {
+   .contact {
+    min-height: calc(
+      100svh - var(--header-height)
+    );
+
     grid-template-columns: 1fr;
+
+    align-content: center;
 
     gap: 70px;
 
-    margin-top: 70px;
-
     padding:
-      30px
+      60px
       var(--page)
       80px;
   }

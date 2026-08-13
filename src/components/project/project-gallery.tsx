@@ -10,7 +10,7 @@ import {
 
 import type { ProjectImage } from "@/data/projects";
 
-import { ImageViewer } from "@/components/image-viewer";
+import { ImageViewer } from "@/components/project/image-viewer";
 
 import styles from "./project-gallery.module.css";
 

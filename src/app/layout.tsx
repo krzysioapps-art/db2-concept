@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/navigation/site-footer";
+import { SiteHeader } from "@/components/navigation/site-header";
 
 import { manrope } from "./fonts";
 
 import "./globals.css";
 
-import { ProjectNavigationLoader } from "@/components/project-navigation-loader";
+import { ProjectNavigationLoader } from "@/components/project/project-navigation-loader";
 
 export const metadata: Metadata = {
   title: "db2 architekci",

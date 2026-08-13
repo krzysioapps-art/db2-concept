@@ -2,7 +2,20 @@
   width: 100%;
 }
 
+.start {
+  min-height: calc(
+    100svh - var(--header-height)
+  );
+
+  display: flex;
+  flex-direction: column;
+}
+
 .projects {
+  min-height: calc(
+    100svh - var(--header-height)
+  );
+
   max-width: var(--content);
 
   margin: 0 auto;
@@ -11,9 +24,15 @@
     clamp(80px, 10vw, 140px)
     var(--page)
     120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .index {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns:
