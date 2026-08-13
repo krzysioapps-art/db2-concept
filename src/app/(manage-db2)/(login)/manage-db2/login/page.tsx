@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 import styles from "./login.module.css";
 
@@ -11,11 +10,7 @@ const DEMO_LOGIN = "demo";
 const DEMO_PASSWORD = "db2demo";
 
 export default function ManageLoginPage() {
-  const searchParams = useSearchParams();
 
-  const next =
-    searchParams.get("next") ||
-    "/manage-db2";
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +29,15 @@ export default function ManageLoginPage() {
         MANAGE_AUTH_KEY,
         "true"
       );
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+      const next =
+        params.get("next") ||
+        "/manage-db2";
 
       window.location.href = next;
 
