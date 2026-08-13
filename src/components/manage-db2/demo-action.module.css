@@ -1,0 +1,190 @@
+.primary {
+  padding: 9px 14px;
+
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    opacity 150ms ease;
+}
+
+.primary:hover {
+  opacity: 0.75;
+}
+
+.secondary {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #777;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    color 150ms ease;
+}
+
+.secondary:hover {
+  color: #111;
+
+  text-decoration: underline;
+}
+
+/* --------------------------------
+   Modal
+-------------------------------- */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.modal {
+  width: min(460px, 100%);
+
+  background: #fff;
+  color: #111;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #dededb;
+}
+
+.modalLabel {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.close {
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #777;
+
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #111;
+}
+
+.modalBody {
+  padding: 30px 20px 34px;
+}
+
+.modalBody h2 {
+  margin: 0 0 14px;
+
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+.modalBody p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #555;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.modalBody .notice {
+  margin-top: 18px;
+
+  color: #999;
+
+  font-size: 10px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 16px 20px;
+
+  border-top: 1px solid #dededb;
+}
+
+.confirm {
+  padding: 9px 16px;
+
+  border: 1px solid #111;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.confirm:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 800px) {
+  .backdrop {
+    align-items: flex-end;
+
+    padding: 12px;
+  }
+
+  .modal {
+    width: 100%;
+  }
+
+  .modalBody {
+    padding: 26px 18px 30px;
+  }
+
+  .modalHeader {
+    padding-inline: 18px;
+  }
+
+  .modalFooter {
+    padding-inline: 18px;
+  }
+}

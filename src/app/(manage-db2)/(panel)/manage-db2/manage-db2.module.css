@@ -1,0 +1,484 @@
+.layout {
+  min-height: 100vh;
+  margin-top: calc(-1 * var(--header-height));
+}
+
+/* --------------------------------
+   Page
+-------------------------------- */
+
+.page {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+
+  background: #f7f7f5;
+  color: #111;
+}
+
+/* --------------------------------
+   Sidebar
+-------------------------------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px 24px;
+
+  border-right: 1px solid #dededb;
+  background: #fff;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-top: 70px;
+}
+
+.nav a {
+  padding: 9px 0;
+
+  color: #777;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition: color 150ms ease;
+}
+
+.nav a:hover {
+  color: #111;
+}
+
+.demoNotice {
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #dededb;
+}
+
+.demoNotice span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.demoNotice p {
+  max-width: 170px;
+
+  margin: 8px 0 0;
+
+  color: #888;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* --------------------------------
+   Main
+-------------------------------- */
+
+.main {
+  min-width: 0;
+
+  padding: 44px clamp(30px, 5vw, 80px) 100px;
+}
+
+.header {
+  padding-bottom: 70px;
+
+  border-bottom: 0px solid #dededb;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+
+  color: #999;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+/* --------------------------------
+   Sections
+-------------------------------- */
+
+.section {
+  padding: 60px 0;
+
+  border-bottom: 0px solid #dededb;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #999;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.sectionActions {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.count {
+  color: #888;
+
+  font-size: 11px;
+}
+
+.placeholder {
+  padding: 35px;
+
+  border: 1px dashed #ccc;
+
+  color: #999;
+
+  font-size: 12px;
+}
+
+/* --------------------------------
+   Projects
+-------------------------------- */
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(0, 1fr)
+    auto;
+
+  gap: 24px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid #dededb;
+}
+
+.project:first-child {
+  border-top: 0;
+}
+
+.projectImage {
+  width: 180px;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #e9e9e6;
+}
+
+.projectImage img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.projectInfo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectInfo h3 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.projectInfo p {
+  margin: 0;
+
+  color: #888;
+
+  font-size: 11px;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+
+  color: #999;
+
+  font-size: 10px;
+}
+
+.projectActions {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 800px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+
+    height: auto;
+
+    border-right: 0;
+    border-bottom: 1px solid #dededb;
+  }
+
+  .nav {
+    margin-top: 30px;
+  }
+
+  .demoNotice {
+    margin-top: 25px;
+  }
+
+  .main {
+    padding: 35px 20px 70px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .sectionActions {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .project {
+    grid-template-columns:
+      110px
+      minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .projectImage {
+    width: 110px;
+  }
+
+  .projectActions {
+    grid-column: 1 / -1;
+
+    padding-top: 4px;
+  }
+}
+
+.header {
+  position: relative;
+}
+
+.headerAction {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+}
+
+/* --------------------------------
+   Header action
+-------------------------------- */
+
+.headerAction {
+  position: absolute;
+
+  right: 0;
+  bottom: 70px;
+}
+
+/* --------------------------------
+   Empty state
+-------------------------------- */
+
+.emptyState {
+  padding: 50px 0;
+
+  border-top: 1px solid #dededb;
+}
+
+.emptyStateTitle {
+  margin-bottom: 8px;
+
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+
+.emptyState p {
+  max-width: 420px;
+
+  margin: 0 0 24px;
+
+  color: #888;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* --------------------------------
+   Office
+-------------------------------- */
+
+.officeGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid #dededb;
+}
+
+.field {
+  min-height: 110px;
+
+  padding: 20px 24px 20px 0;
+
+  border-bottom: 1px solid #dededb;
+}
+
+.field:nth-child(odd) {
+  padding-right: 40px;
+
+  border-right: 1px solid #dededb;
+}
+
+.field:nth-child(even) {
+  padding-left: 24px;
+}
+
+.field span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #999;
+
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.field strong {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.teamList {
+  border-top: 1px solid #dededb;
+}
+
+.teamRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 60px;
+
+  border-bottom: 1px solid #dededb;
+
+  font-size: 13px;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 800px) {
+  .headerAction {
+    position: static;
+
+    margin-top: 24px;
+  }
+
+  .officeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .field,
+  .field:nth-child(odd),
+  .field:nth-child(even) {
+    padding: 18px 0;
+
+    border-right: 0;
+  }
+
+  .teamRow {
+    min-height: 56px;
+  }
+}

@@ -1,0 +1,153 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px 24px;
+
+  border-right: 1px solid #dededb;
+  background: #fff;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-top: 70px;
+}
+
+.nav a {
+  position: relative;
+
+  padding: 9px 0;
+
+  color: #777;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition: color 150ms ease;
+}
+
+.nav a:hover {
+  color: #111;
+}
+
+.nav a.active {
+  color: #111;
+}
+
+.nav a.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -24px;
+  top: 50%;
+
+  width: 3px;
+  height: 14px;
+
+  background: #111;
+
+  transform: translateY(-50%);
+}
+
+.demoNotice {
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #dededb;
+}
+
+.demoNotice span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.logout {
+  margin-top: auto;
+
+  padding: 20px 0;
+
+  border-top: 1px solid #dededb;
+}
+
+.logout button {
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: #777;
+
+  font: inherit;
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: color 150ms ease;
+}
+
+.logout button:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+.demoNotice {
+  padding-top: 0;
+}
+
+.demoNotice span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.demoNotice p {
+  max-width: 170px;
+
+  margin: 8px 0 0;
+
+  color: #888;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: static;
+
+    height: auto;
+
+    border-right: 0;
+    border-bottom: 1px solid #dededb;
+  }
+
+  .nav {
+    margin-top: 30px;
+  }
+
+  .nav a.active::before {
+    display: none;
+  }
+
+  .logout {
+    margin-top: 25px;
+  }
+}

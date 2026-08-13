@@ -1,9 +1,9 @@
-﻿import { projects } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { HomeHero } from "@/components/home/home-hero";
 import { ProjectIndex } from "@/components/home/project-index";
 import { SectionScrollState } from "@/components/navigation/section-scroll-state";
 
-import styles from "@/app/page.module.css";
+import styles from "@/app/(site)/page.module.css";
 
 type HomePageProps = {
   language: "pl" | "en";

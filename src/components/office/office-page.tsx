@@ -1,7 +1,7 @@
-﻿import { SectionScrollState } from "@/components/navigation/section-scroll-state";
+import { SectionScrollState } from "@/components/navigation/section-scroll-state";
 import { translations } from "@/data/translations";
 
-import styles from "@/app/office/studio.module.css";
+import styles from "@/app/(site)/office/studio.module.css";
 
 import { PolishText } from "@/components/ui/polish-text";
 
