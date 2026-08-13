@@ -105,9 +105,7 @@ export function OfficePage({
 
             <input
               name="name"
-              placeholder={
-                t.studio.namePlaceholder
-              }
+              
             />
           </label>
 
@@ -117,9 +115,7 @@ export function OfficePage({
             <input
               type="email"
               name="email"
-              placeholder={
-                t.studio.emailPlaceholder
-              }
+              
             />
           </label>
 
@@ -129,9 +125,7 @@ export function OfficePage({
             <textarea
               name="message"
               rows={6}
-              placeholder={
-                t.studio.messagePlaceholder
-              }
+              
             />
           </label>
 
